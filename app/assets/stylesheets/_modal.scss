@@ -1,0 +1,67 @@
+
+@import "variables";
+
+#page-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  // display: none;
+
+  background-color: rgba(black, 0.7);
+}
+
+.vue-modal {
+  padding: 20px;
+  position: fixed;
+  top: 100px;
+  z-index: 1500;
+
+  background-color: white;
+  box-shadow: 0px 1px 10px black;
+  border-radius: 4px;
+
+  &.large {
+    width: 80%;
+    left: 10%;
+  }
+
+  &.medium {
+    width: 40%;
+    left: 30%;
+  }
+
+  &.small {
+    width: 25%;
+    left: 37.5%;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: $unm-red;
+    font-size: 19px;
+    cursor: pointer;
+    &:hover {opacity: 0.5;}
+  }
+
+  // transition: all 1.3s ease;
+}
+
+.modal-enter-active, .modal-leave-active {
+  transition: all .3s
+}
+.modal-enter, .modal-leave-active {
+  opacity: 0;
+  tranform: translateY(-20px);
+}
+
+.screen-enter-active, .screen-leave-active {
+  transition: opacity .3s
+}
+.screen-enter, .screen-leave-active {
+  opacity: 0
+}

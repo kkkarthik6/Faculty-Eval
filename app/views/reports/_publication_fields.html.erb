@@ -1,0 +1,14 @@
+<div class="nested-fields form-section container">
+
+        <%= f.label :publication_type, 'Activity/Publication Type' %>
+        <%= f.text_field :publication_type, class: 'form-control' %>
+        
+        <%= f.label :body, 'Text' %> <small>This should be a full citation for this publication</small>
+        <%= f.text_area  :body, class: 'form-control' %>
+       
+        <%= f.label :url %>
+        <%= f.text_area :url, class: 'form-control' %>
+
+
+    <%= link_to_remove_association "Remove Publication Info", f %>
+</div>

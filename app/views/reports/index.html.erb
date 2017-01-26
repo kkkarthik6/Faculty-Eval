@@ -1,0 +1,19 @@
+<h2>Previous Evaluations</h2>
+<hr class="faded">
+<table class="table table-bordered table-striped">
+
+  <tbody>
+    <% @reports.each do |report| %>
+    <tr>
+      <td><%= report.report_year %></td>
+      <td><%= report.rank %></td>
+      <td><%= link_to 'Show', person_report_path(@person, report), class: "btn btn-primary" %></td>
+      <td><%= link_to 'Edit', edit_person_report_path(@person, report), class: "btn btn-warning" %></td>
+      <td><td><%= link_to "Download Pdf", get_report_person_report_path(@person, report), class: 'btn btn-info' %></td></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Evaluation', new_person_report_path(@person), class: "btn btn-outline-primary" %>
+<% @reports = @reports.order(report_year: :DESC) %>
